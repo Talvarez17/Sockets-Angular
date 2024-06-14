@@ -1,0 +1,109 @@
+<div class="contenedor">
+
+  <section class="filas">
+
+    <div class="piezas">
+
+      <div class="campos">
+        <form [formGroup]="room">
+          <div class="mb-3">
+            <label for="roomN" class="form-label">Nombre de la room</label>
+            <input id="roomN" class="form-control" placeholder="Room" formControlName="roomN" type="text"
+              [readonly]="activoRoom">
+          </div>
+        </form>
+        <div class="botones">
+          <button (click)="StartRoom()" class="btn btn-success">Entrar a room</button>
+          <button (click)="LeftRoom()" class="btn btn-danger">Dejar Room</button>
+        </div>
+      </div>
+
+      <div class="campos mt-4">
+        <form [formGroup]="event">
+          <div class="mb-3">
+            <label for="eventN" class="form-label">Nombre del evento</label>
+            <input id="eventN" class="form-control" placeholder="Event" formControlName="eventN" type="text"
+              [readonly]="activoEvent">
+          </div>
+        </form>
+        <div class="botones">
+          <button (click)="StartEvent()" class="btn btn-success">Entrar al evento</button>
+          <button (click)="LeftEvent()" class="btn btn-danger">Dejar Evento</button>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="piezas">
+      <div class="campos">
+        <label>Lista de rooms disponibles</label>
+
+        <table class="table table-primary table-striped" style="text-align: center; overflow: scroll;">
+          <thead>
+            <tr>
+              <th scope="col">Nombre de la room</th>
+              <th scope="col">Usuarios Conectados</th>
+            </tr>
+          </thead>
+          <tbody>
+
+            @for (lr of lrooms; track lr) {
+            <tr>
+              <td>{{ lr.RoomName }}</td>
+              <td>{{ lr.Users }}</td>
+            </tr>
+            }
+
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </section>
+
+  <section class="filas">
+
+    <div class="piezas">
+
+      <form [formGroup]="formulario">
+        <div class="mb-3">
+          <label for="msg1" class="form-label">Mensajes de la room</label>
+          <textarea id="mgs1" formControlName="msg" class="form-control" rows="3"></textarea>
+        </div>
+      </form>
+
+      <form [formGroup]="formulario2">
+        <div class="mb-3">
+          <label for="msg2" class="form-label">Mensajes del event</label>
+          <textarea id="msg2" formControlName="msg" class="form-control" rows="3"></textarea>
+        </div>
+      </form>
+    </div>
+
+    <div class="piezas">
+      <div class="campos">
+        <label>Lista de eventos disponibles</label>
+        <table class="table table-primary table-striped" style="text-align: center; overflow: scroll;">
+          <thead>
+            <tr>
+              <th scope="col">Nombre del event</th>
+              <th scope="col">Usuarios Conectados</th>
+            </tr>
+          </thead>
+          <tbody>
+
+            @for (le of levents; track le) {
+            <tr>
+              <td>{{ le.EventName }}</td>
+              <td>{{ le.Users }}</td>
+            </tr>
+            }
+
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </section>
+
+</div>

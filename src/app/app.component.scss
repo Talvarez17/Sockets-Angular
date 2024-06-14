@@ -1,0 +1,48 @@
+.contenedor {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    background-color: aqua;
+    padding: 20px;
+    height: 100vh;
+    box-sizing: border-box;
+}
+
+.filas{
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    width: 100%;
+    max-width: 1000px;
+}
+
+.piezas{
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 500px;
+}
+
+.campos {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+label{
+    font-size: large;
+    font-weight: 500;
+}
+
+button{
+    width: 200px;
+}
+
+.botones {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
